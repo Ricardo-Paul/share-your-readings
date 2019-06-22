@@ -1,0 +1,15 @@
+<h4> My Books </h4>
+
+<% @books.each do |book| %>
+<h5> Book Shared By: <%= book.user.username %> </h5>
+<h6>_______________________________________________________________________</h6>
+<h4> Book Title:  <%= book.title %> </h4>
+<h4> Book Author: <%= book.author %> </h4>
+<h4> Summary: <%= book.summary %> </h4>
+<h4> Favorite Quote: <%= book.quote %> </h4>
+
+<a href="/books/<%=book.id%>/edit" type="button" class="btn btn-primary"  > Edit Book </a>
+<button type="button" class="btn btn-danger">Delete Book </button>
+
+<h6>_________________________________________________________________________</h6>
+<% end %>
