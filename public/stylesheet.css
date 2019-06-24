@@ -1,0 +1,17 @@
+footer {
+	background: white;
+	text-align: center;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    height:40px;
+}
+
+.new_prayer{
+    margin-top: 8px;
+}
+
+.navbar {
+	border-bottom: 2px solid Gainsboro;
+	margin-bottom: 1em;
+}

@@ -1,40 +1,48 @@
+<div class="columns">
+	<div class="column is-one-third is-offset-one-third">
+		<h1 class="title">Create an Account</h1>
+		<p class="subtitle">*required</p>
+		
+		<form method="post" action="/users/new">
+			<div class="field">
+				<label class="label" for="username" >Username*</label>
+				<p class="control has-icons-left">
+				    <input class="input" id="username" type="text" name="username"/>
+			    	<span class="icon is-small is-left">
+			        	<i class="fas fa-user"></i>
+			    	</span>
+				</p>
+			</div>
+			<div class="field">
+				<label class="label for="email" ">Email*</label>
+				<p class="control has-icons-left">
+				    <input class="input" id="email" type="email" id="email" name="email" />
+			    	<span class="icon is-small is-left">
+			        	<i class="fas fa-envelope"></i>
+			    	</span>
+				</p>
+			</div>
+			<div class="field">
+				<label class="label" for="password" >Password*</label>
+				<p class="control has-icons-left">
+					<input class ="input" id="password" type="password" name="password"/>
+			    	<span class="icon is-small is-left">
+			        	<i class="fas fa-lock"></i>
+			    	</span>
+				</p>
+			</div>
+			<br>
 
-<h2 class="text-center"> Welcome To Reading Share </h2>
-<form method="POST" action="/users/new" class="form-signin">       
-      <p class="lead"> </p>
-          <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-user"></i></span>
-          <input type="text" class="form-control" name="username" placeholder="Username" required="required">
-        </div>
-          </div>
-          <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
-          <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
-        </div>
-          </div>
-      <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-          <input type="password" class="form-control" name="password" placeholder="Password" required="required">
-        </div>
-          </div>
-      <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon">
-            <i class="fa fa-lock"></i>
-            <i class="fa fa-check"></i>
-          </span>
-          
-        </div>
-          </div>        
-      <div class="form-group">
-              <input type="submit" value="Sign Up" class="btn btn-primary btn-block btn-lg">
-          </div>
-      <p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
+			<div class="field">
+			    <p class="control">
+			    	<button class="button is-success">
+			      	Sign Up
+			    	</button>
+			  	</p>
+			</div>
+		</form> <br>
 
-    <div class="text-center">Already have an account? <a href="/login">Login here</a>.</div> 
-  </form>
+		<a href="/login" class="class"> I already have an account </a>
 
-<link rel="stylesheet" href="/stylesheets/form.css" />
+	</div>
+</div>

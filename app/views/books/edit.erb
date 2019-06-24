@@ -3,9 +3,9 @@
 <form method="POST" action="/books/<%=@book.id%>/edit" >
     <input id="hidden" type="hidden" name="_method" value="PATCH">
 
-    <p> Book Title: <input type="tex" name="title"> </p>
-    <p> Book Author: <input type="text" name="author"> </p>
-    <p> Summarize The Book: <input type="text" name="summary"> </p>
-    <p> My favorite quote from the Book: <input type="text" name="quote"> </p>
+    <p> Book Title: <input type="tex" name="title" value="<%=@book.title%>"> </p>
+    <p> Book Author: <input type="text" name="author" value="<%=@book.author%>"> </p>
+    <p> Summarize The Book: <input type="text" name="summary" value="<%=@book.summary%>"> </p>
+    <p> My favorite quote from the Book: <input type="text" name="quote" value="<%=@book.quote%>"> </p>
     <input type="submit" value="Share Book">
 </form>

@@ -47,11 +47,28 @@ class BooksController < ApplicationController
     @summary = params[:summary]
     @quote = params[:quote]
     @book = Book.find_by(id: params[:id])
-    binding.pry
+    #binding.pry
     if @book && @book.user == current_user
         @book.update(title: @title, author: @author, summary: @summary, quote: @quote)
         redirect to "/books"
     end
   end
+
+  get '/books/:id/show' do
+    @book = Book.find_by(id: params[:id])
+    erb :"/books/show"
+  end
+
+  delete '/books/:id/delete' do
+    @book = Book.find_by(id: params[:id])
+    if @book && @book.user == current_user
+        @book.delete
+        redirect to "/books"
+    else
+        flash.next[:error] = " Not your book"
+        redirect to "/books"
+    end
+  end
+
 
 end

@@ -1,21 +1,38 @@
-<h4> Your friends have shared Book summaries with you </h4>
+<% if !!flash[:error] %>
+       <h4> <%= flash[:error] %> </h4> 
+<%end%>
 
-<h4> You're Connected to Reading Share -  </h4>
-<h4> <%=current_user.username%> </h4>
-<a class="btn btn-primary btn-block btn-sm" href="/books/my_books"> Manage my books </a>
-<a href="/books/my_books"> manage my books </a>
-<button> <a href="/books/new"> Share Reading </a> </button>
-<% @books.each do |book| %>
-<h5> Book Shared By: <%= book.user.username %> </h5>
-<h6>_______________________________________________________________________</h6>
-<h4> Book Title:  <%= book.title %> </h4>
-<h4> Book Author: <%= book.author %> </h4>
-<h4> Summary: <%= book.summary %> </h4>
-<h4> Favorite Quote: <%= book.quote %> </h4>
-<h6>_________________________________________________________________________</h6>
-<% end %>
+<div class="columns">
+        <div class="column is-8 is-offset-2">
+    
+                <h2 class="title is-2 centered"> Books shared by your friends </h2>
+
+                    <% @books.each do |book| %>
+                    <a href="/books/<%=book.id%>/show">
+                          <article class="message">
+                            <div class="message-header">
+                                <p>
+                                    <strong><%=book.title%> - </strong>
+                                    </strong> <%=book.author%> </h5> 
+                                </p>
+                                <h6> <strong>Shared By:</strong> <%=book.user.username%> </h6>                                   
+                            </div>
+                            <div class="message-body">
+                            <strong> Summary: </strong> <%=book.summary%> <br> <br>
+                            <strong> My favorite quote: </strong>    <%=book.quote%>	
+                            </div>
+                          </article>
+                    </a>
+                <br>
+                <%end%>
+        </div>
+    </div>
+
 
 
 <button > <a href="/logout"> Log Out </a> </button>
+
+
+
 
 
