@@ -1,11 +1,50 @@
-<h4> Edit this book </h4>
 
-<form method="POST" action="/books/<%=@book.id%>/edit" >
-    <input id="hidden" type="hidden" name="_method" value="PATCH">
-
-    <p> Book Title: <input type="tex" name="title" value="<%=@book.title%>"> </p>
-    <p> Book Author: <input type="text" name="author" value="<%=@book.author%>"> </p>
-    <p> Summarize The Book: <input type="text" name="summary" value="<%=@book.summary%>"> </p>
-    <p> My favorite quote from the Book: <input type="text" name="quote" value="<%=@book.quote%>"> </p>
-    <input type="submit" value="Share Book">
-</form>
+<div class="columns">
+        <div class="column is-8 is-offset-2">
+            <form method="post" action="/books/<%=@book.id%>/edit">
+            <input id="hidden" type="hidden" name="_method" value="PATCH">
+                <h2 class="title is-2 is-centered"> Update Book </h2>
+    
+                    <div class="field">
+                        <label class="label" for="author" >Book Author*</label>
+                        <p class="control">
+                            <input class="input" id="author" type="text" name="author" value="<%=@book.author%>"/>
+                        </p>
+                    </div>
+    
+                    <div class="field">
+                            <label class="label" for="title" >Book Title*</label>
+                            <p class="control">
+                                <input class="input" id="title" type="text" name="title" value="<%=@book.title%>"/>
+                            </p>
+                    </div>
+                    <br>
+    
+                    <div class="field">
+                            <label class="label" for="summary">Book Summary*</label>
+                            <p class="control">
+                                <textarea class="textarea" type="text" id="verse" name="summary" value="" >  <%=@book.summary%> </textarea>
+                            </p>
+                    </div>
+    
+                    <div class="field">
+                            <label class="label" for="quote"> My favorite quote from the book*</label>
+                            <p class="control">
+                                <textarea class="textarea" type="text" id="verse" name="quote" value=""/> <%=@book.quote%> </textarea>
+                            </p>
+                    </div>
+    
+                    <div class="field">
+                            <p class="control">
+                                <button class="button is-success">
+                                  Update Book
+                                </button>
+                            </p>
+                    </div>
+    
+    
+                    <br><br>
+    
+            </form>
+        </div>
+    </div>

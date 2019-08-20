@@ -1,7 +1,5 @@
 class BooksController < ApplicationController
 
-
-
     get "/books" do 
         @books = Book.all
         #binding.pry
@@ -26,7 +24,9 @@ class BooksController < ApplicationController
             if @title!="" && @author!="" && @summary!="" && @quote!=""
                 @book = current_user.books.build( title: @title, author: @author, summary: @summary, quote: @quote )
                 if @book.save
-                    redirect to "/books"
+                    flash.next[:success] = "Book successfully created"
+                    #redirect to "/books"
+                    redirect to "/books/#{@book.id}/show"
                 end
                 #binding.pry  
             else
@@ -50,6 +50,11 @@ class BooksController < ApplicationController
     #binding.pry
     if @book && @book.user == current_user
         @book.update(title: @title, author: @author, summary: @summary, quote: @quote)
+        @book.save
+        redirect to "/books/#{@book.id}/show"
+        flash.next[:update] = "Book Updated Successfully"
+    else
+        flash.next[:error] = " You cannot Edit that book "
         redirect to "/books"
     end
   end
@@ -69,6 +74,8 @@ class BooksController < ApplicationController
         redirect to "/books"
     end
   end
+
+
 
 
 end

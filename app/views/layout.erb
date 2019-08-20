@@ -12,14 +12,14 @@
   <body>
   
   	<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-
+      <div class="navbar-brand "> 
+        <strong>Brand</strong>
+      </div>
 
   
       <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href='/prayers'> </a>
-        <a class="navbar-item" href='/groups'></a>
-        <a href="/" class="navbar-item"> Readings Share </a>
+        <a href="/books" class="navbar-item "> <strong> Readings Share </strong>  </a>
      </div>
   
         <div class="navbar-end">
@@ -31,8 +31,9 @@
           Sign Up
         </a>
         <% else %>
-        <a class="button is-info is-rounded is-outlined new_prayer"  href="/books/new"> Share New Book </a>
-        <a class="navbar-item" href='/account'>
+        <a class="button is-info is-rounded  new_prayer is-link"  href="/books/new"> Share New Book </a> <br>
+        <a class="button is-info is-rounded  new_prayer is-link is-outlined"  href="/books"> All Books </a>
+        <a class="navbar-item" >
           <strong><%=current_user.username%></strong>
         </a>
         <a class="navbar-item" href='/logout'>
